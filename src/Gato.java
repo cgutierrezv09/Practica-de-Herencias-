@@ -2,7 +2,7 @@ public class  Gato extends  Animal{
 
     //artributos
 
-    String nombre;
+    private String nombre;
 
     public Gato(String nombre) {
         this.nombre = nombre;

@@ -5,21 +5,18 @@ public class CuentaAhorros extends Cuenta{
     public CuentaAhorros(double saldo) {
         super(saldo);
     }
+    public void deporsitar(double monto){
+        saldo+=monto;
+        System.out.println("Deposito realizado, nuevo saldo "+saldo);
+    }
 
-    @Override
-    public void retirar(double monto) {
-
-        if (saldo < SALDO_MINIMO) {
-            System.out.println("No es posible realizar el retiro .");
-            System.out.println("Tu cuenta debe mantener al menos $100.");
+    public double retirar() {
+        if (SALDO_MINIMO<100){
+            System.out.println("Fondos insuficientes, este banco no " +
+                    "permite retirar menos de 100 dolares");
+        }else{
+            System.out.println("Retiro extitoso este es su nuevo saldo "+saldo);
         }
-        else if ((saldo - monto) < SALDO_MINIMO) {
-            System.out.println("No puedes retirar esa cantidad.");
-            System.out.println("La cuenta no puede quedar con menos de $100.");
-        }
-        else {
-            saldo -= monto;
-            System.out.println("Retiro exitoso . Nuevo saldo: $" + saldo);
-        }
+        return saldo;
     }
 }
